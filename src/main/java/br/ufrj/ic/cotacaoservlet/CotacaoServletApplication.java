@@ -4,6 +4,6 @@ import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;
 
 @ApplicationPath("/api")
-public class CotacaoServlet extends Application {
+public class CotacaoServletApplication extends Application {
     
 }
