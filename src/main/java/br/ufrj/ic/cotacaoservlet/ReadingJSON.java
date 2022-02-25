@@ -9,6 +9,8 @@ import java.net.URL;
 import java.security.SecureRandom;
 import java.security.cert.X509Certificate;
 import java.util.Scanner;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 public class ReadingJSON {
 
@@ -75,8 +77,9 @@ public class ReadingJSON {
 
         String response = JSONToString("https://economia.awesomeapi.com.br/" + moeda + "/" + consertarErroApi + "/");
 
+        String[] cortandoString = response.split("\"ask\":");
+
         for(int i = 0; i < dias; i++){
-            String[] cortandoString = response.split("\"ask\":");
             String[] retirandoAsteriscos = cortandoString[i*4 + 1].split("\"");
             String valorEmString = retirandoAsteriscos[1];
             float valorDiario = Float.parseFloat(valorEmString);
@@ -84,6 +87,32 @@ public class ReadingJSON {
         }
 
         return arrayDeValores;
+    }
+
+    public static long[] GetArrayDeTimetamps(String moeda, int dias) throws Exception {
+        long[] arrayDeTimestamps = new long[dias + 1];
+
+        int consertarErroApi = dias * 4;
+
+        String response = JSONToString("https://economia.awesomeapi.com.br/" + moeda + "/" + consertarErroApi + "/");
+
+        String[] cortandoString = response.split("\"timestamp\":");
+
+        for(int i = 0; i < dias; i++){
+            String[] retirandoAsteriscos = cortandoString[i*4 + 1].split("\"");
+            String valorEmString = retirandoAsteriscos[1];
+            long valorDiario = Long.parseLong(valorEmString);
+            arrayDeTimestamps[i] = valorDiario * 1000;
+        }
+
+        return arrayDeTimestamps;
+    }
+
+    public static String GetDayFromTimestamp(long timestamp){
+        Timestamp stamp = new Timestamp(timestamp);
+        Date date = new Date(stamp.getTime());
+        String[] timestampDate = date.toString().split("-");
+        return timestampDate[2];
     }
 
 }
