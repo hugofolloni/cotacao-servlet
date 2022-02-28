@@ -19,8 +19,8 @@ public class GeraGraficoResource {
                 "labels: labels, " +
                 "datasets: [{" +
                 "label: \"Variação de " + moeda + " nos últimos " + dias + " dias\"," +
-                "backgroundColor: \"rgb(255, 99, 132)\", " +
-                "borderColor: \"rgb(255, 99, 132)\", " +
+                "backgroundColor: \"#4a148c \", " +
+                "borderColor: \"#4a148c \", " +
                 "data: [";
         for(int i = 1; i < dias; i++){
             html += floats[dias - i] + ", ";
@@ -36,5 +36,4 @@ public class GeraGraficoResource {
                 "</script>";
         return html;
     }
-
 }
