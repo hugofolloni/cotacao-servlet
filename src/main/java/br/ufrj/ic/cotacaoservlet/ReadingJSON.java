@@ -1,4 +1,4 @@
-package br.ufrj.ic.cotacao;
+package br.ufrj.ic.cotacaoservlet;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;

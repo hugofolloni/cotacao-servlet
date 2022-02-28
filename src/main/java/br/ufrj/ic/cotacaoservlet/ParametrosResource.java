@@ -1,15 +1,16 @@
-package br.ufrj.ic.cotacao;
+package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.GET;
+import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 
-@Path("/input-cotacao")
+@Path("/input-converter")
 public class ParametrosResource {
     @GET
     @Produces("text/html")
 
-    public static parametros(){
-        "<!DOCTYPE html>"+
+    public String parametros(){
+        String html = "<!DOCTYPE html>"+
         "<html lang=\"pt-br\">"+
         "<head>"+
             "<meta charset=\"UTF-8\">"+
@@ -52,21 +53,24 @@ public class ParametrosResource {
                     "border-radius: 8px;"+
                     "background: linear-gradient(45deg, #8e2de2, #4a00e0);"+
                 "}"+
-            "</style>"+
+                ".setinha{ transition: 0.3s ease all; }" +
+                ".setinha:hover{ color: #8e2de2; }" +
+                "</style>" +
         "</head>"+
         "<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>"+
         "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >"+
-            "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">"+
-                "<form method=\"GET\" action=\"/converter\"  style=\"display: flex; flex-direction: column;\">"+
+                "<a href=\"input-converter\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
+                "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">"+
+                "<form method=\"GET\" action=\"converter\"  style=\"display: flex; flex-direction: column;\">"+
                     "<h2 style=\"margin: 5px; font-weight: 700;\">Converta suas moedas</h2>"+
                     "<p>Moeda de Origem</p>"+
-                    "<input type=\"text\" placeholder=\"Código da moeda de origem\" maxlength="4" name="entrada">"+
+                    "<input type=\"text\" placeholder=\"Código da moeda de origem\" maxlength=\"4\" name=\"entrada\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
                     "<p>Moeda de Destino</p>"+
-                    "<input type=\"text\" placeholder=\"Código da moeda de destino\" maxlength=\"4\" name=\"saida\">"+
+                    "<input type=\"text\" placeholder=\"Código da moeda de destino\" maxlength=\"4\" name=\"saida\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
                     "<p>Valor</p>"+
                     "<input type=\"number\" step=\"0.01\" min=\"0\" placeholder=\"Valor\" name=\"valor\">"+
                     "<p>Taxa de Câmbio</p>"+
-                    "<input type=\"number\" step=\"0.1\" min="0" max="100" placeholder=\"Taxa de Câmbio\" name=\"taxa\">"+
+                    "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Câmbio\" name=\"taxa\">"+
                     "<p>Taxa de Imposto</p>"+
                     "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Imposto\" name=\"imposto\">"+
                     "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center\">"+
@@ -76,6 +80,7 @@ public class ParametrosResource {
             "</div>"+
         "</body>"+
         "</html>";
+        return html;
     }
 
 }

@@ -1,4 +1,4 @@
-package br.ufrj.ic.cotacao;
+package br.ufrj.ic.cotacaoservlet;
 
 import java.sql.Date;
 import java.sql.Timestamp;

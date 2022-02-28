@@ -1,4 +1,4 @@
-package br.ufrj.ic.cotacao;
+package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
@@ -23,12 +23,13 @@ public class CotacaoResource {
                         "</head>"+
                         "<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>"+
                         "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >"+
+
                             "<header>"+
                                 "<h1>Cotacoins</h1>"+
                             "</header>"+
                             "<div style=\"margin: 20px 0px; width: 50vw; height: 20vh; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\">"+
-                                "<a href=\"/formulario-converter\">Cotação</a>"+
-                                "<a href=\"/formulario-grafico\">Histórico</a>"+
+                                "<a href=\"input-converter\">Cotação</a>"+
+                                "<a href=\"input-grafico\">Histórico</a>"+
                             "</div>"+
                             "<div style=\"width: 40vw; height: auto; background-color: #3c3c3c; display: flex; flex-direction: row; padding: 20px; border-radius: 10px; align-items: center; justify-content: space-around;\">"+
                                 "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: f[lex-star]t; justify-content: space-around;\">"+
