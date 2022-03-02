@@ -9,6 +9,9 @@ public class ParametrosResource {
     @GET
     @Produces("text/html")
 
+    /*
+    Endpoint que retorna um html com um formulário para realizar a cotação uma moeda.
+    */
     public String parametros(){
         String html = "<!DOCTYPE html>"+
         "<html lang=\"pt-br\">"+

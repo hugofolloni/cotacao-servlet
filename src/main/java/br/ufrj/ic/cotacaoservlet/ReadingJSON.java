@@ -33,6 +33,9 @@ public class ReadingJSON {
         }
     }
 
+    /*Método pra leitura do arquivo Json, fornecido na url passada no parâmentro do método, 
+    como uma String.
+    */
     public static String JSONToString(String link) throws Exception {
         ignorarSSL();
         String inline = "";
@@ -45,9 +48,19 @@ public class ReadingJSON {
 
         int responseCode = conn.getResponseCode();
 
+        /*
+        Caso o código de status do HTTTP da url seja diferente de 200 (que indica que o 
+        processamento foi bem sucedido), uma exceção é lançada, juntamente com o código de 
+        status obtido na requisição.
+        */
         if (responseCode != 200) {
             throw new RuntimeException("HttpResponseCode: " + responseCode);
-        } else {
+        } 
+        /*
+        Caso contrário, um Scanner lê linha por linha do arquivo Json e atribui o resultado 
+        a uma String inline, que será retornada pelo método.
+        */
+        else {
             Scanner scanner = new Scanner(url.openStream());
 
             while (scanner.hasNext()) {
@@ -59,8 +72,20 @@ public class ReadingJSON {
         return inline;
     }
 
+    /*
+    Método para obter a cotação de uma moeda de acordo com a api. Utiliza o método JSONToString
+    para ler as informações de cotação de uma moeda  em relação a outra.
+    */
     public static float GetValorMoeda(String origem, String destino) throws Exception {
+
+        // As moedas de origem e destino, passadas como parâmetros, integram a URL da api. 
         String response = JSONToString("https://economia.awesomeapi.com.br/json/last/" + origem + "-" + destino);
+        
+        /*
+        Como a única informação desejada é a cotação da moeda em relação a uma outra, extraímos 
+        apenas a informação fornecida pelo "ask", retirando os caracteres não númericos e 
+        transformando a String resultante desse processo no Float a ser retornado pelo método.
+        */
         String[] cortandoString = response.split("\"ask\":");
         String[] retirandoAsteriscos = cortandoString[1].split("\"");
         String resposta = retirandoAsteriscos[1];
@@ -70,6 +95,11 @@ public class ReadingJSON {
         return valor;
     }
 
+    /*
+    Método para obter a cotação de uma moeda por um determinado período, de acordo com a api,
+    para estruturar o eixo vertical do gráfico.Utiliza o método JSONToString para ler as 
+    informações necessárias.
+    */
     public static float[] GetArrayDeCotacoes(String moeda, int dias) throws Exception {
         float[] arrayDeValores = new float[dias + 1];
 
@@ -77,6 +107,11 @@ public class ReadingJSON {
 
         String response = JSONToString("https://economia.awesomeapi.com.br/" + moeda + "/" + consertarErroApi + "/");
 
+        /*
+        Novamente, como a única informação desejada é a cotação da moeda, extraímos apenas os 
+        valores fornecidos pelo "ask" pela quantidade de dias informados no método. Esses valores
+        são transformados e inseridos no array retornado pelo método.
+        */
         String[] cortandoString = response.split("\"ask\":");
 
         for(int i = 0; i < dias; i++){
@@ -89,6 +124,10 @@ public class ReadingJSON {
         return arrayDeValores;
     }
 
+    /*
+    Método para obter as datas para a montagem do gráfico de acordo com o número de dias 
+    passado como parâmetro. Utiliza o método JSONToString para ler as informações necessárias da api.
+    */
     public static long[] GetArrayDeTimetamps(String moeda, int dias) throws Exception {
         long[] arrayDeTimestamps = new long[dias + 1];
 
@@ -108,6 +147,7 @@ public class ReadingJSON {
         return arrayDeTimestamps;
     }
 
+    // ?
     public static String GetDayFromTimestamp(long timestamp){
         Timestamp stamp = new Timestamp(timestamp);
         Date date = new Date(stamp.getTime());

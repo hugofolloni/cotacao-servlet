@@ -9,6 +9,11 @@ public class InputGraficoResource {
     @GET
     @Produces("text/html")
 
+    /*
+    Endpoint que retorna um html com um formulário para a construção do gráfico 
+    de histórico de uma moeda.
+    */
+
     public String inputGrafico(){
         String html =   "<!DOCTYPE html>" +
                         "<html lang=\"pt-br\">" +
