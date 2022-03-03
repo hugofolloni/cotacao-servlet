@@ -1,6 +1,6 @@
 # cotacao-servlet
 
-Este projeto é um servlet que retorna a cotação de moedas em tempo real.
+Este projeto é um servlet que retorna a cotação de moedas em tempo real. Foi feito como trabalho final da disciplina de Computação 2 do curso de Ciência da Computação da Universidade Federal do Rio de Janeiro, no período de 2021.2.
 
 ## 📖 Sobre este projeto
 Utilizando Java, construímos um servlet que recebe um valor, uma moeda de entrada e uma moeda de saída e retorna o valor convertido, além de possuir a opção de inclur taxa de câmbio e impostos. Além disso, o projeto também disponibiliza um gráfico da variação de uma moeda em relação ao real, com um intervalo de 15-60 dias.
@@ -10,18 +10,7 @@ Ao entrar na página principal, o usuário se depara com dois botões, um segue 
 
 ## 💻 Tecnologias
 - Java
-- Economia awesome api
-
-## 📚 O que ainda falta
-
-- Consertar distanciamento do resultado moeda
-- Abaixar div do gráfico
-- Cortar digitos númericos maiores que dois no resultado da cotação
-- Consertar redirecionamento do link do gráfico (está voltando pro input do converter)
-- Consertar redirecionamento do link do input-converter (está voltadno para ele mesmo)
-- Colocar espaço depois de quase tudo no converter
-- Cortar dígitos depois do ponto também no valor cotação
-- 
+- AwesomeAPI - Economia
 
 ## integrantes
 
