@@ -36,11 +36,11 @@ public class ConverterResource {
                 "<a href=\"input-converter\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
                 "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">" +
                             "<h2>Conversão de " + entrada + " para " + saida  + "</h2>" +
-                            "<p>Valor inicial:" + valor + " " + entrada + "</p>" +
-                            "<p>Cotação unitária:" + ReadingJSON.GetValorMoeda(entrada, saida) + "</p>" +
+                            "<p>Valor inicial: " + valor + " " + entrada + "</p>" +
+                            "<p>Cotação unitária: " + ReadingJSON.GetValorMoeda(entrada, saida) + "</p>" +
                             "<p>Taxa de Câmbio: " + taxa + "%</p>" +
-                            "<p>Taxa de imposto:" + imposto + "%</p>" +
-                            "<h4 style=\"margin-left: 25px;\">Valor final:" + printResultado(entrada, saida, valor, taxa, imposto) + " " + saida + "</h4>" +
+                            "<p>Taxa de imposto: " + imposto + "%</p>" +
+                            "<h4 style=\"margin-left: 25px;\">Valor final: " + printResultado(entrada, saida, valor, taxa, imposto) + " " + saida + "</h4>" +
                         "</div>" +
                     "</body>" +
                     "</html>";
@@ -58,7 +58,7 @@ public class ConverterResource {
             float result = valor * cotacao;
             float comImposto = result * imposto / 100;
             float comTaxa = result * taxa / 100;
-            resultado =  (result - comImposto) - comTaxa;
+            resultado = Math.round(((result - comImposto) - comTaxa) * 10000) /100;
         }
         catch(Exception e){
             e.printStackTrace();

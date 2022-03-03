@@ -40,10 +40,10 @@ public class GraficoResource {
             "<script src=\"https://kit.fontawesome.com/0b66beacb2.js\" crossorigin=\"anonymous\"></script>" +
             "<link href=\"https://fonts.googleapis.com/css?family=Poppins\" rel='stylesheet'> "+
         "</head>" +
-        "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-contnt: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >" +
-            "<a href=\"input-converter\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
+        "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >" +
+            "<a href=\"input-grafico\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
             " <div style=\"display: flex; width: 50vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\"> "+
-                "<h2>Variação do valor de " + codigoMoeda + " nos últimos" + qtdeDias + " dias</h2>" +
+                "<h2>Variação do valor de " + codigoMoeda + " nos últimos " + qtdeDias + " dias</h2>" +
                 GeraGraficoResource.gerarGrafico(codigoMoeda, qtdeDias) +
             "</div>" +
         "</body>" +

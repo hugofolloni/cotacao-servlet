@@ -147,7 +147,7 @@ public class ReadingJSON {
         return arrayDeTimestamps;
     }
 
-    // ?
+    // Método para obter o dia do mês que o valor da cotação foi alcançada, transformando o timestamp passado pela API para o dia do mês.
     public static String GetDayFromTimestamp(long timestamp){
         Timestamp stamp = new Timestamp(timestamp);
         Date date = new Date(stamp.getTime());

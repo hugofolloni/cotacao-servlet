@@ -14,11 +14,11 @@ public class GeraGraficoResource {
         html += "<script src=\"https://cdn.jsdelivr.net/npm/chart.js\"></script>";
         html += "<script>" +
                 "const labels = [";
-        // ?
+        // Monta a lista de labels do gráfico, que atuaram como os X, ou as datas para cada valor de cotação.
         for(int i = 1; i < dias; i++){
             html += "\"" + ReadingJSON.GetDayFromTimestamp(timestamps[dias - i]) + "\",";
         };
-        // ?
+        // Delimita o último label, para não ocorrer adição de vírgula.
         html += ReadingJSON.GetDayFromTimestamp(timestamps[0]) + "];";
         html += "const data = {" +
                 "labels: labels, " +
@@ -27,11 +27,11 @@ public class GeraGraficoResource {
                 "backgroundColor: \"#4a148c \", " +
                 "borderColor: \"#4a148c \", " +
                 "data: [";
-        // ?
+        // Adiciona os pontos no gráfico, que serão as cotações, para cada uma das labels do gráfico.
         for(int i = 1; i < dias; i++){
             html += floats[dias - i] + ", ";
         }
-        // ?
+        // Assim como acima, adiciona o último ponto, para não ocorrer adição de vírgula.
         html += floats[0] + "]";
         html += "}]}; " +
                 "const config = {" +
