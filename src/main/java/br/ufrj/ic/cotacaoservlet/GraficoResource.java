@@ -6,6 +6,11 @@ import javax.ws.rs.*;
 public class GraficoResource {
     @GET
     @Produces("text/html")
+
+    /*
+    Enpoint que retorna um html que mostra ao usuário o gráfico contruído pelo método gerarGrafico da 
+    classe GeraGraficoResource com as informações fornecidas no formulário do /input-grafico.
+     */
     public String grafico(@QueryParam("moeda") @DefaultValue("USD") String moeda, @QueryParam("dias") @DefaultValue("30") String dias) throws Exception {
         int qtdeDias = Integer.parseInt(dias);
         String codigoMoeda = moeda;

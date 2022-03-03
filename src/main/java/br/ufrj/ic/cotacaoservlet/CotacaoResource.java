@@ -8,6 +8,13 @@ import javax.ws.rs.Produces;
 public class CotacaoResource {
     @GET
     @Produces("text/html")
+
+    /*
+    Endpoint inicial do Servlet. O método abaixo retorna um html que informa 
+    os códigos das principais moedas, além de botões que indicam as áreas de 
+    conversão e do histórico de uma moeda.
+    */
+
     public String cotacao() {
         String html =   "<!DOCTYPE html><html lang=\"pt-br\">"+
                         "<head>"+

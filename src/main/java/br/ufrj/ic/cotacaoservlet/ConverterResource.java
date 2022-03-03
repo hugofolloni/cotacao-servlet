@@ -47,6 +47,10 @@ public class ConverterResource {
         return html;
     }
 
+    /*
+    Método para o cálculo da conversão da moeda, considerando possíveis taxas e impostos.
+    Contém um try-catch para uma eventual exceção.
+    */
     public static float printResultado(String entrada, String saida, float valor, float taxa, float imposto){
         float resultado = 0;
         try {
