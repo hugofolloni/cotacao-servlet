@@ -11,7 +11,6 @@ Ao entrar na página principal, o usuário se depara com dois botões, um segue 
 ## 🎁 O que falta
 - Adicionando mais itens quando dá refresh (listar)
 - Travando no index (listar)
-- Alinhar lista de moedas (cotacao)
 
 ## 💻 Tecnologias
 - Java

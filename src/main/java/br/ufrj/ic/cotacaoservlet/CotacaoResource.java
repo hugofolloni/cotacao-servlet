@@ -31,7 +31,6 @@ public class CotacaoResource {
                         "</head>"+
                         "<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>"+
                         "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >"+
-
                             "<header>"+
                                 "<h1>Cotacoins</h1>"+
                             "</header>"+
@@ -41,15 +40,15 @@ public class CotacaoResource {
                                 "<a href=\"input-grafico\">Histórico</a>"+
                             "</div>"+
                         "<div style=\"width: 40vw; height: auto; background-color: #3c3c3c; display: flex; flex-direction: column; padding: 20px; border-radius: 10px; align-items: center; justify-content: space-around;\">"+
-                        "<h2>Alguns códigos para conversão</h2>" +
-                        "<div style='display: flex; flex-direction: row; width: 100%; justify-content: space-around;'>" +
-                        "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: f[lex-star]t; justify-content: space-around;\">"+
-                        "<span> - Dólar - USD</span><span> - Real - BRL</span><span> - Euro - EUR</span><span> - Iene - JPY</span><span> - Peso Argentino - ARS</span><span> - Libra Esterlina - GBP</span><span> - Dólar Australiano - AUD</span><span> - Riyal Saudita - SAR</span><span> - Franco Suíço - CHF</span><span> - Coroa Dinamarquesa - DKK</span><span> - Bitcoin - BTC</span><span> - Sol do Peru - PEN</span><span> - Peso Mexicano - MXN</span>"+
-                        "</div>"+
-                        "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-around;\">"+
-                        "<span> - Yuan Chinês - CNY </span><span> - Rand Sul-Africano - ZAR</span><span> - Rúpia de Sri Lanka - LKR</span><span> - Ethereum - ETH</span><span> - Nova Lira Turca - TRY</span><span> - Guarani Paraguaio - PYG</span><span> - Peso Uruguaio - UYU</span><span> - Rublo Russo - RUB</span><span> - Coroa Norueguesa - NOK</span><span> - Rúpia Indiana - INR</span><span> - Coroa Checa -CZK</span><span> - Dólar Neozelandês - NZD</span>"+
-                        "</div>"+
-                        "</div>" +
+                            "<h2>Alguns códigos para conversão</h2>" +
+                            "<div style='display: flex; flex-direction: row; width: 100%; justify-content: space-around;'>" +
+                                "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: f[lex-star]t; justify-content: space-around;\">"+
+                                    "<span> - Dólar - USD</span><span> - Real - BRL</span><span> - Euro - EUR</span><span> - Iene - JPY</span><span> - Peso Argentino - ARS</span><span> - Libra Esterlina - GBP</span><span> - Dólar Australiano - AUD</span><span> - Riyal Saudita - SAR</span><span> - Franco Suíço - CHF</span><span> - Coroa Dinamarquesa - DKK</span><span> - Bitcoin - BTC</span><span> - Sol do Peru - PEN</span><span> - Peso Mexicano - MXN</span>"+
+                                "</div>"+
+                                "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-around;\">"+
+                                    "<span> - Yuan Chinês - CNY </span><span> - Rand Sul-Africano - ZAR</span><span> - Rúpia de Sri Lanka - LKR</span><span> - Ethereum - ETH</span><span> - Nova Lira Turca - TRY</span><span> - Guarani Paraguaio - PYG</span><span> - Peso Uruguaio - UYU</span><span> - Rublo Russo - RUB</span><span> - Coroa Norueguesa - NOK</span><span> - Rúpia Indiana - INR</span><span> - Coroa Checa -CZK</span><span> - Dólar Neozelandês - NZD</span>"+
+                                "</div>"+
+                            "</div>" +
                         "</div>"+
                         "</body>"+
                         "</html>";

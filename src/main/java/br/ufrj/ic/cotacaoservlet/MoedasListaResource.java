@@ -56,23 +56,23 @@ public class MoedasListaResource {
                 "</head>"+
                 "<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>"+
                 "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >"+
-                "<a href=\"listar\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
-                "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">"+
-                "<form method=\"GET\" action=\"resultado-lista\"  style=\"display: flex; flex-direction: column;\">"+
-                "<h2 style=\"margin: 5px; font-weight: 700;\">Converta seus itens</h2>"+
-                "<p>Moeda de Origem</p>"+
-                "<input type=\"text\" placeholder=\"Código da moeda de origem\" maxlength=\"4\" name=\"entrada\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
-                "<p>Moeda de Destino</p>"+
-                "<input type=\"text\" placeholder=\"Código da moeda de destino\" maxlength=\"4\" name=\"saida\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
-                "<p>Taxa de Câmbio</p>"+
-                "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Câmbio\" name=\"taxa\">"+
-                "<p>Taxa de Imposto</p>"+
-                "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Imposto\" name=\"imposto\">"+
-                "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center\">"+
-                "<input type=\"submit\" value=\"Converter\">"+
-                "</div>"+
-                "</form>"+
-                "</div>"+
+                    "<a href=\"listar\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
+                    "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">"+
+                        "<form method=\"GET\" action=\"resultado-lista\"  style=\"display: flex; flex-direction: column;\">"+
+                            "<h2 style=\"margin: 5px; font-weight: 700;\">Converta seus itens</h2>"+
+                            "<p>Moeda de Origem</p>"+
+                            "<input type=\"text\" placeholder=\"Código da moeda de origem\" maxlength=\"4\" name=\"entrada\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
+                            "<p>Moeda de Destino</p>"+
+                            "<input type=\"text\" placeholder=\"Código da moeda de destino\" maxlength=\"4\" name=\"saida\" onkeyup=\"this.value = this.value.toUpperCase();\">"+
+                            "<p>Taxa de Câmbio</p>"+
+                            "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Câmbio\" name=\"taxa\">"+
+                            "<p>Taxa de Imposto</p>"+
+                            "<input type=\"number\" step=\"0.1\" min=\"0\" max=\"100\" placeholder=\"Taxa de Imposto\" name=\"imposto\">"+
+                            "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center\">"+
+                                "<input type=\"submit\" value=\"Converter\">"+
+                            "</div>"+
+                        "</form>"+
+                    "</div>"+
                 "</body>"+
                 "</html>";
         return html;
