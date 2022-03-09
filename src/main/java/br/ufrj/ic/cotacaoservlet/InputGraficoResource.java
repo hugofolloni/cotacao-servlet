@@ -81,10 +81,8 @@ public class InputGraficoResource {
                 "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">" +
                                 "<form method=\"GET\" action=\"grafico\"  style=\"display: flex; flex-direction: column;\">" +
                                     "<h2 style=\"margin: 5px; font-weight: 700;\">Veja o histórico de uma moeda</h2>" +
-                                    "<p>Moeda a ser convertida</p>" +
+                                    "<p>Moeda a ser analisada</p>" +
                                     "<input type=\"text\" placeholder=\"Código da moeda\" maxlength=\"3\" name=\"moeda\" onkeyup=\"this.value = this.value.toUpperCase();\">" +
-                                    "<p>Número de dias para histórico</p>" +
-                                    "<input type=\"number\" step=\"1\" min=\"5\" max=\"90\" placeholder=\"Número de dias\" name=\"dias\">"+ 
                                     "<div style=\"display: flex; flex-direction: column; align-items: center; justify-content: center\">" +
                                         "<input type=\"submit\" value=\"Converter\">" +
                                     "</div>" +

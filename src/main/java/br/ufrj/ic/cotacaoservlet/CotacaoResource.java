@@ -16,6 +16,7 @@ public class CotacaoResource {
     */
 
     public String cotacao() {
+        CotacaoApplication.excluiArray();
         String html =   "<!DOCTYPE html><html lang=\"pt-br\">"+
                         "<head>"+
                         "<meta charset=\"UTF-8\">"+
@@ -36,16 +37,20 @@ public class CotacaoResource {
                             "</header>"+
                             "<div style=\"margin: 20px 0px; width: 50vw; height: 20vh; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\">"+
                                 "<a href=\"input-converter\">Cotação</a>"+
+                                "<a href=\"listar\">Lista</a>" +
                                 "<a href=\"input-grafico\">Histórico</a>"+
                             "</div>"+
-                            "<div style=\"width: 40vw; height: auto; background-color: #3c3c3c; display: flex; flex-direction: row; padding: 20px; border-radius: 10px; align-items: center; justify-content: space-around;\">"+
-                                "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: f[lex-star]t; justify-content: space-around;\">"+
-                                    "<span> - Dólar - USD</span><span> - Real - BRL</span><span> - Euro - EUR</span><span> - Iene - JPY</span><span> - Peso Argentino - ARS</span><span> - Libra Esterlina - GBP</span><span> - Dólar Australiano - AUD</span><span> - Riyal Saudita - SAR</span><span> - Franco Suíço - CHF</span><span> - Coroa Dinamarquesa - DKK</span><span> - Bitcoin - BTC</span><span> - Sol do Peru - PEN</span><span> - Peso Mexicano - MXN</span>"+
-                                "</div>"+
-                                "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-around;\">"+
-                                    "<span> - Yuan Chinês - CNY </span><span> - Rand Sul-Africano - ZAR</span><span> - Rúpia de Sri Lanka - LKR</span><span> - Ethereum - ETH</span><span> - Nova Lira Turca - TRY</span><span> - Guarani Paraguaio - PYG</span><span> - Peso Uruguaio - UYU</span><span> - Rublo Russo - RUB</span><span> - Coroa Norueguesa - NOK</span><span> - Rúpia Indiana - INR</span><span> - Coroa Checa -CZK</span><span> - Dólar Neozelandês - NZD</span>"+
-                                "</div>"+
-                            "</div>"+
+                        "<div style=\"width: 40vw; height: auto; background-color: #3c3c3c; display: flex; flex-direction: column; padding: 20px; border-radius: 10px; align-items: center; justify-content: space-around;\">"+
+                        "<h2>Alguns códigos para conversão</h2>" +
+                        "<div style='display: flex; flex-direction: row; width: 100%; justify-content: space-around;'>" +
+                        "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: f[lex-star]t; justify-content: space-around;\">"+
+                        "<span> - Dólar - USD</span><span> - Real - BRL</span><span> - Euro - EUR</span><span> - Iene - JPY</span><span> - Peso Argentino - ARS</span><span> - Libra Esterlina - GBP</span><span> - Dólar Australiano - AUD</span><span> - Riyal Saudita - SAR</span><span> - Franco Suíço - CHF</span><span> - Coroa Dinamarquesa - DKK</span><span> - Bitcoin - BTC</span><span> - Sol do Peru - PEN</span><span> - Peso Mexicano - MXN</span>"+
+                        "</div>"+
+                        "<div style=\"width: 40%; height: 100%; display: flex; flex-direction: column; align-items: flex-start; justify-content: space-around;\">"+
+                        "<span> - Yuan Chinês - CNY </span><span> - Rand Sul-Africano - ZAR</span><span> - Rúpia de Sri Lanka - LKR</span><span> - Ethereum - ETH</span><span> - Nova Lira Turca - TRY</span><span> - Guarani Paraguaio - PYG</span><span> - Peso Uruguaio - UYU</span><span> - Rublo Russo - RUB</span><span> - Coroa Norueguesa - NOK</span><span> - Rúpia Indiana - INR</span><span> - Coroa Checa -CZK</span><span> - Dólar Neozelandês - NZD</span>"+
+                        "</div>"+
+                        "</div>" +
+                        "</div>"+
                         "</body>"+
                         "</html>";
         return html;

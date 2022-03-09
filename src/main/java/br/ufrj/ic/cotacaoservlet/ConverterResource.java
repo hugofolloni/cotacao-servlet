@@ -1,12 +1,13 @@
 package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.*;
+import java.text.DecimalFormat;
 
 @Path("/converter")
 public class ConverterResource {
     @GET
     @Produces("text/html")
-    public String converter(@QueryParam("valor") Float valor , @DefaultValue("USD") @QueryParam("entrada") String entrada, @DefaultValue("BRL") @QueryParam("saida") String saida, @QueryParam("taxa") @DefaultValue("0") float taxa, @QueryParam("imposto") @DefaultValue("0") float imposto) throws Exception {
+    public String converter(@QueryParam("valor") Double valor , @DefaultValue("USD") @QueryParam("entrada") String entrada, @DefaultValue("BRL") @QueryParam("saida") String saida, @QueryParam("taxa") @DefaultValue("0") Double taxa, @QueryParam("imposto") @DefaultValue("0") Double imposto) throws Exception {
         String html = "<!DOCTYPE html>" +
                     "<html lang=\"pt-br\">" +
                     "<head>" +
@@ -48,14 +49,16 @@ public class ConverterResource {
     Método para o cálculo da conversão da moeda, considerando possíveis taxas e impostos.
     Contém um try-catch para uma eventual exceção.
     */
-    public static float printResultado(String entrada, String saida, float valor, float taxa, float imposto){
-        float resultado = 0;
+    public static Double printResultado(String entrada, String saida, Double valor, Double taxa, Double imposto){
+        Double resultado = 0.0;
         try {
-            float cotacao = ReadingJSON.GetValorMoeda(entrada, saida);
-            float result = valor * cotacao;
-            float comImposto = result * imposto / 100;
-            float comTaxa = result * taxa / 100;
-            resultado = Math.round(((result - comImposto) - comTaxa) * 10000) /100;
+            Double cotacao = ReadingJSON.GetValorMoeda(entrada, saida);
+            Double result = valor * cotacao;
+            Double comImposto = result * imposto / 100;
+            Double comTaxa = result * taxa / 100;
+            resultado = (result - comImposto) - comTaxa;
+            Double arredondador = Double.parseDouble(Long.toString(Math.round(resultado*100)));
+            resultado = (arredondador/100);
         }
         catch(Exception e){
             e.printStackTrace();
