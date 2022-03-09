@@ -76,7 +76,7 @@ public class ReadingJSON {
     Método para obter a cotação de uma moeda de acordo com a api. Utiliza o método JSONToString
     para ler as informações de cotação de uma moeda  em relação a outra.
     */
-    public static float GetValorMoeda(String origem, String destino) throws Exception {
+    public static Double GetValorMoeda(String origem, String destino) throws Exception {
 
         // As moedas de origem e destino, passadas como parâmetros, integram a URL da api. 
         String response = JSONToString("https://economia.awesomeapi.com.br/json/last/" + origem + "-" + destino);
@@ -90,7 +90,7 @@ public class ReadingJSON {
         String[] retirandoAsteriscos = cortandoString[1].split("\"");
         String resposta = retirandoAsteriscos[1];
 
-        float valor = Float.parseFloat(resposta);
+        Double valor = Double.parseDouble(resposta);
 
         return valor;
     }

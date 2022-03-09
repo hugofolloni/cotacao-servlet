@@ -8,6 +8,11 @@ Utilizando Java, construímos um servlet que recebe um valor, uma moeda de entra
 ## 🧔 User Story
 Ao entrar na página principal, o usuário se depara com dois botões, um segue para um formulário para que sejam passados valores e moedas de entrada e saída para realizar a conversão e outro que leva para o gráfico, após o usuário escolher a moeda e os dias. Além disso, na página principal, o usuário encontrará uma lista com os códigos de algumas moedas que devem ser passados como parâmetros na conversão.
 
+## 🎁 O que falta
+- Adicionando mais itens quando dá refresh (listar)
+- Travando no index (listar)
+- Alinhar lista de moedas (cotacao)
+
 ## 💻 Tecnologias
 - Java
 - AwesomeAPI - Economia
