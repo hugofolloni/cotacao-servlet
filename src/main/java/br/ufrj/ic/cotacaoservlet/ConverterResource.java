@@ -15,16 +15,13 @@ public class ConverterResource {
                         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"+
                         "<title>Cotacoins</title>" +
                         "<style>" +
-                            "div h2::before{" +
-                               " content:'';" +
-                                "position: absolute;" +
-                                "height: 4px;" +
-                                "width: 100px;" +
-                                "bottom: 3px;" +
-                               " left: 40;" +
-                                "top: 0;" +
-                                "margin-top: 185px;" +
-                                "border-radius: 8px;" +
+                            "div h2::after{"+
+                                "content:'';"+
+                                "position: relative;"+
+                                "height: 4px;"+
+                                "width: 100px;"+
+                                "margin-top: 1px;"+
+                                "border-radius: 8px;"+
                                " background: linear-gradient(45deg, #8e2de2, #4a00e0);" +
                             "}" +
                         ".setinha{ transition: 0.3s ease all; }" +

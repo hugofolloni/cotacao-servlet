@@ -62,16 +62,13 @@ public class InputGraficoResource {
                                     "color: #4a148c;" +
                                     "letter-spacing: 1px;" +
                                 "}" + 
-                                "div form h2::before{" +
-                                    "content:'';" +
-                                    "position: absolute;" +
-                                    "height: 4px;" +
-                                    "width: 100px;" +
-                                    "bottom: 3px;" +
-                                    "left: 40;" +
-                                    "top: 0;" +
-                                    "margin-top: 210px;" +
-                                    "border-radius: 8px;" +
+                                "div form h2::after{"+
+                                    "content:'';"+
+                                    "position: relative;"+
+                                    "height: 4px;"+
+                                    "width: 100px;"+
+                                    "margin-top: 1px;"+
+                                    "border-radius: 8px;"+
                                     "background: linear-gradient(45deg, #8e2de2, #4a00e0);" +
                                 "}" +
                                 ".setinha{ transition: 0.3s ease all; }" +

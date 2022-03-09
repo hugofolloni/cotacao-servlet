@@ -44,15 +44,12 @@ public class ParametrosResource {
                     "color: #4a148c;"+
                     "letter-spacing: 1px;"+
                 "}"+
-                "div form h2::before{"+
+                "div form h2::after{"+
                     "content:'';"+
-                    "position: absolute;"+
+                    "position: relative;"+
                     "height: 4px;"+
                     "width: 100px;"+
-                    "bottom: 3px;"+
-                    "left: 40;"+
-                    "top: 0;"+
-                    "margin-top: 75px;"+
+                    "margin-top: 1px;"+
                     "border-radius: 8px;"+
                     "background: linear-gradient(45deg, #8e2de2, #4a00e0);"+
                 "}"+
