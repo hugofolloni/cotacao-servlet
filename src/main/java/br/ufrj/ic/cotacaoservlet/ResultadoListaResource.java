@@ -1,3 +1,9 @@
+/*  Grupo 4:
+Bárbara Barsi Duarte Batista da silva - DRE: 121058158
+Hugo Folloni Guarilha - DRE: 121085854
+Pedro Mion Braga Cordeiro - DRE: 121065919
+*/
+
 package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.*;
@@ -21,7 +27,9 @@ public class ResultadoListaResource {
                         "<meta http-equiv=\"X-UA-Compatible\" content=\"IE=edge\">" +
                         "<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\">"+
                         "<title>Cotacoins</title>" +
+                        "<link rel=\"icon\" href=\"https://cdn-icons-png.flaticon.com/512/1175/1175277.png\" type=\"image/x-icon\" />"+
                         "<style>" +
+                            "{scrollbar-width: auto;scrollbar-color: #8f54a0 #ffffff; } *::-webkit-scrollbar {width: 16px;}*::-webkit-scrollbar-track {background: #ffffff;}*::-webkit-scrollbar-thumb; background-color: #8f54a0;border-radius: 10px;border: 3px solid #ffffff;}"+
                             ".botao {" +
                                 "display: flex;"+
                                 "align-items: center;"+
@@ -57,7 +65,7 @@ public class ResultadoListaResource {
                         "</style>" +
                     "</head>" +
                     "<link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>" +
-                    "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; overflow-y: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >" +
+                    "<body style=\"padding: 0; margin: 0; box-sizing: border-box; display: flex; flex-direction: column; width: 100vw; height: 100vh; overflow-x: hidden; align-items: center; justify-content: space-around; background-color: #1c1c1c; color: #eaeaea; font-family: 'Poppins'\"; >" +
                         "<a href=\"listar\" style=\"position: absolute; left: 0; top: 0; margin: 50px 0px 0px 50px; text-decoration: none; font-weight: 700; font-size: 40px; color: white;\"><p class=\"setinha\"><</p></a>" +
                         "<div style=\"display: flex; width: 30vw; flex-direction: column; background-color: #3c3c3c; padding: 20px 30px; border-radius: 15px;\">" +
                             "<div style=\"display: flex; flex-direction: column; \">" +
