@@ -15,6 +15,11 @@ public class MoedasListaResource {
     @GET
     @Produces("text/html")
 
+    /*
+    Endpoint que retorna um html com um formulário para a determinação das moedas 
+    envolvidas na conversão dos itens da lista, bem como eventuais taxas e impostos.
+    */
+    
     public String parametros(){
         String html = "<!DOCTYPE html>"+
                 "<html lang=\"pt-br\">"+

@@ -16,7 +16,8 @@ public class ParametrosResource {
     @Produces("text/html")
 
     /*
-    Endpoint que retorna um html com um formulário para realizar a cotação uma moeda.
+    Endpoint que retorna um html com um formulário para a determinação das moedas 
+    envolvidas na conversão , bem como eventuais taxas e impostos.
     */
     public String parametros(){
         String html = "<!DOCTYPE html>"+

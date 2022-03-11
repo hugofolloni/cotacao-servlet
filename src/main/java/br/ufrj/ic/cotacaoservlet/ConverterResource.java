@@ -7,12 +7,16 @@ Pedro Mion Braga Cordeiro - DRE: 121065919
 package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.*;
-import java.text.DecimalFormat;
-
 @Path("/converter")
 public class ConverterResource {
     @GET
     @Produces("text/html")
+
+    /*
+    Enpoint que retorna um html que mostra ao usuário a conversão realizada pelo método 
+    printResultado com as informações fornecidas no formulário do /input-converter.
+     */
+
     public String converter(@QueryParam("valor") Double valor , @DefaultValue("USD") @QueryParam("entrada") String entrada, @DefaultValue("BRL") @QueryParam("saida") String saida, @QueryParam("taxa") @DefaultValue("0") Double taxa, @QueryParam("imposto") @DefaultValue("0") Double imposto) throws Exception {
         String html = "<!DOCTYPE html>" +
                     "<html lang=\"pt-br\">" +

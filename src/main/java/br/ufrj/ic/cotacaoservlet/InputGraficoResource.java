@@ -16,8 +16,7 @@ public class InputGraficoResource {
     @Produces("text/html")
 
     /*
-    Endpoint que retorna um html com um formulário para a construção do gráfico 
-    de histórico de uma moeda.
+    Endpoint que retorna um html com um formulário para a determinação da moeda a ser analisada.
     */
 
     public String inputGrafico(){
