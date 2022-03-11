@@ -1,9 +1,16 @@
+/*  Grupo 4:
+Bárbara Barsi Duarte Batista da silva - DRE: 121058158
+Hugo Folloni Guarilha - DRE: 121085854
+Pedro Mion Braga Cordeiro - DRE: 121065919
+*/
+
 package br.ufrj.ic.cotacaoservlet;
 
 import javax.net.ssl.HttpsURLConnection;
 import javax.net.ssl.SSLContext;
 import javax.net.ssl.TrustManager;
 import javax.net.ssl.X509TrustManager;
+import java.io.IOException;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.SecureRandom;
@@ -40,22 +47,27 @@ public class ReadingJSON {
         ignorarSSL();
         String inline = "";
 
-        URL url = new URL(link);
+        try {
+            URL url = new URL(link);
 
-        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
-        conn.setRequestMethod("GET");
-        conn.connect();
+            HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+            conn.setRequestMethod("GET");
+            conn.connect();
 
-        int responseCode = conn.getResponseCode();
-
+            int responseCode = conn.getResponseCode();
         /*
         Caso o código de status do HTTTP da url seja diferente de 200 (que indica que o 
         processamento foi bem sucedido), uma exceção é lançada, juntamente com o código de 
         status obtido na requisição.
         */
         if (responseCode != 200) {
-            throw new RuntimeException("HttpResponseCode: " + responseCode);
-        } 
+            if(responseCode == 404){
+                throw new RuntimeException("A aplicação não rodou pois os parâmetros não foram encontrados.");
+            }
+            else{
+                throw new RuntimeException("A aplicação não rodou pelo erro de resposta: " + responseCode);
+            }
+        }
         /*
         Caso contrário, um Scanner lê linha por linha do arquivo Json e atribui o resultado 
         a uma String inline, que será retornada pelo método.
@@ -69,7 +81,11 @@ public class ReadingJSON {
 
             scanner.close();
         }
+        }catch(IOException e){
+            e.printStackTrace();
+        }
         return inline;
+
     }
 
     /*

@@ -1,3 +1,9 @@
+/*  Grupo 4:
+Bárbara Barsi Duarte Batista da silva - DRE: 121058158
+Hugo Folloni Guarilha - DRE: 121085854
+Pedro Mion Braga Cordeiro - DRE: 121065919
+*/
+
 package br.ufrj.ic.cotacaoservlet;
 
 import javax.ws.rs.ApplicationPath;
