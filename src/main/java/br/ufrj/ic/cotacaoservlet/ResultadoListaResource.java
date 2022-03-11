@@ -12,9 +12,18 @@ import javax.ws.rs.*;
 public class ResultadoListaResource {
     @GET
     @Produces("text/html")
+
+    /*
+    Enpoint que retorna um html que mostra ao usuário a conversão dos itens da lista com os dados
+    do /listar e /moedas-lista.
+    */
+
     public String resultadoLista(@DefaultValue("USD") @QueryParam("entrada") String entrada, @DefaultValue("BRL") @QueryParam("saida") String saida, @QueryParam("taxa") @DefaultValue("0") Double taxa, @QueryParam("imposto") @DefaultValue("0") Double imposto) throws Exception {
+        
         double valorOrigem = 0;
         double valorDestino = 0;
+
+        //Somatório de todos os valores da lista, tanto os originais quanto os convertidos.
         for(int i=0;i<CotacaoApplication.arrayNome.size();i++){
             valorOrigem+= CotacaoApplication.arrayValor.get(i);
             valorDestino += ConverterResource.printResultado(entrada,  saida, CotacaoApplication.arrayValor.get(i), taxa, imposto);

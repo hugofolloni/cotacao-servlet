@@ -12,12 +12,16 @@ import javax.ws.rs.*;
 public class ListarResource {
     @GET
     @Produces("text/html")
+
+    /*Endpoint que retorna um html com um formulário para realizar a montagem de uma lista de itens.*/
+
     public static String listar(@QueryParam("valor") @DefaultValue("0") Double valor, @QueryParam("nome") String nome, @QueryParam("quantidade") @DefaultValue("1") int quantidade, @QueryParam("apagarNome") String apagarNome, @QueryParam("apagarValor") @DefaultValue("0") Double apagarValor){
         criarLista(valor, nome, quantidade);
         apagarItem(apagarNome, apagarValor);
 
         String disabled = "";
 
+        //Caso a lista esteja vazia, o usuário é impedido de pressionar o botão "Concluir".
         if(CotacaoApplication.arrayNome.size() == 0){
             disabled = "disabled";
         }
@@ -108,6 +112,11 @@ public class ListarResource {
         return html;
     }
 
+    /*
+    Método para a criação da lista. Adiciona um item nas arrays de nome, valor e quantidade 
+    caso o valor não seja nulo ou o nome não seja vazio e o item já esteja listado.
+    */
+
     public static void criarLista(Double valor, String nomeDoItem, Integer quantidade){
         if (!(valor == 0 || nomeDoItem.isEmpty()) && !itemJaListado(nomeDoItem, valor)){
             CotacaoApplication.arrayValor.add(valor);
@@ -115,6 +124,12 @@ public class ListarResource {
             CotacaoApplication.arrayQuantidade.add(quantidade);
         }
     }
+
+    /*
+    Método para apagar um item da lista. Percorre a lista, considerando o nome e valor concedidos 
+    no form da exibição da lista (que não aparece par o usuário, mas é enviado no botão de remover), 
+    e remove o item caso o nome e o valor sejam encontrados nas ArrayLists.
+    */
 
     public static void apagarItem(String apagarNome, Double apagarValor){
         for(int i = 0; i<CotacaoApplication.arrayNome.size(); i++){
@@ -125,6 +140,11 @@ public class ListarResource {
             }
         }
     }
+
+    /*
+    Método para impedir a inserção de um mesmo item na lista. Percorre a lista, considerando o 
+    nome e valor concedidos no form da lista e retorna true caso o nome e o valor sejam encontrados nas ArrayLists.
+    */
 
     public static boolean itemJaListado(String nome, Double valor){
         for(int i = 0; i < CotacaoApplication.arrayNome.size(); i++){

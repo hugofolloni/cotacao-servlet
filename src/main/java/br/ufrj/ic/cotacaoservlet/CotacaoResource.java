@@ -52,7 +52,7 @@ public class CotacaoResource {
                                 "Todas as operações do site exigem o uso dos códigos das moedas correspondentes. Abaixo, você encontrará alguns desses códigos.<br>" +
                             "</p></div>"+
                             "<div style=\"margin: 20px 0px; width: 50vw; height: 20vh; display: flex; flex-direction: row; justify-content: space-around; align-items: center;\">"+
-                                "<a class='botao' href=\"input-converter\">Cotação</a>"+
+                                "<a class='botao' href=\"input-converter\">Converter</a>"+
                                 "<a class='botao' href=\"listar\">Lista</a>" +
                                 "<a class='botao' href=\"input-grafico\">Histórico</a>"+
                             "</div>"+
